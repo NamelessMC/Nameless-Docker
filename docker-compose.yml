@@ -1,0 +1,13 @@
+nameless:
+  build: .
+  links:
+    - db
+  ports:
+    - "80:80"
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: nameless
+    MYSQL_USER: nameless
+    MYSQL_PASSWORD: nameless
+    MYSQL_DATABASE: nameless
