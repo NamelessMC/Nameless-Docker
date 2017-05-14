@@ -63,7 +63,7 @@ $ docker run -d -p 80:80 --link nameless_db --name nameless namelessmc
 
 That's it!
 
-# # Installation
+# Installation
 After deploying the containers, open up the corresponding URL in your web browser to get started with NamelessMC.
 
 By default, the web server will be available at `0.0.0.0:80`, means if you deployed it on you own computer, the URL is gonna be `http://localhost`. Instead, if you did it on a remote server, the URL would be `http://<your-server-ip-addr>`.
