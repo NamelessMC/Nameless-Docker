@@ -68,7 +68,7 @@ After deploying the containers, open up the corresponding URL in your web browse
 
 By default, the web server will be available at `0.0.0.0:80`, means if you deployed it on you own computer, the URL is gonna be `http://localhost`. Instead, if you did it on a remote server, the URL would be `http://<your-server-ip-addr>`.
 
-Follow the install instructions. When the database configuration page shows up, fill in `nameless_db` for the *database address*. For database username, password and database name, fill `nameless` for all of them.
+Follow the install instructions. When the database configuration page shows up, fill in `nameless_db` for the *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
 
 When you're done, submit and follow the rest of installation.
 
