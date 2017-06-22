@@ -1,5 +1,5 @@
 nameless:
-  build: .
+  build: src
   links:
     - db
   ports:
