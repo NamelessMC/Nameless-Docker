@@ -49,7 +49,7 @@ $ docker build -t namelessmc .
 If you want to specify the version:
 
 ```bash
-$ docker build --build-arg NAMELESSMC_VERSION=1.0.16 -t namelessmc .
+$ docker build --build-arg NAMELESSMC_VERSION=1.0.21 -t namelessmc .
 ```
 
 The version number **MUST BE** listed [here](https://github.com/NamelessMC/Nameless/releases) and it's **not guranteed** to work.
@@ -68,7 +68,7 @@ After deploying the containers, open up the corresponding URL in your web browse
 
 By default, the web server will be available at `0.0.0.0:80`, means if you deployed it on you own computer, the URL is gonna be `http://localhost`. Instead, if you did it on a remote server, the URL would be `http://<your-server-ip-addr>`.
 
-Follow the install instructions. When the database configuration page shows up, fill in `nameless_db` for the *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
+Follow the install instructions. When the database configuration page shows up, fill in `db` for the *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
 
 When you're done, submit and follow the rest of installation.
 
