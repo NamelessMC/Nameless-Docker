@@ -1,13 +1,23 @@
-nameless:
-  build: src
-  links:
-    - db
-  ports:
-    - "80:80"
-db:
-  image: mysql
-  environment:
-    MYSQL_ROOT_PASSWORD: nameless
-    MYSQL_USER: nameless
-    MYSQL_PASSWORD: nameless
-    MYSQL_DATABASE: nameless
+version: '3.1'
+
+services:
+
+  nameless:
+    build:
+      context: src
+    restart: unless-stopped
+    links:
+      - db
+    ports:
+      - "80:80"
+
+  db:
+    image: mysql:5.7
+    restart: unless-stopped
+    expose:
+      - 3306
+    environment:
+      - "MYSQL_ROOT_PASSWORD=nameless"
+      - "MYSQL_USER=nameless"
+      - "MYSQL_PASSWORD=nameless"
+      - "MYSQL_DATABASE=nameless"
