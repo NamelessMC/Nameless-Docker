@@ -11,17 +11,16 @@ RUN docker-php-source extract \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && a2enmod rewrite \
-    && docker-php-source delete
+    && docker-php-source delete \
+    && apt-get clean \
+    && apt-get autoclean \
+    && apt-get autoremove --purge -y \
+    && rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
 
 RUN curl -Lo nameless.tar.gz https://github.com/NamelessMC/Nameless/archive/v$NAMELESSMC_VERSION.tar.gz \
     && tar -xvf nameless.tar.gz \
     && mv Nameless-$NAMELESSMC_VERSION/* /var/www/html/ \
     && bash -c "mv Nameless-$NAMELESSMC_VERSION/.[^.]* /var/www/html/" \
-    && rm -rf nameless.tar.gz Nameless-$NAMELESSMC_VERSION \ 
+    && rm -rf nameless.tar.gz Nameless-$NAMELESSMC_VERSION \
     && chown -R www-data:www-data /var/www/html \
     && chmod 755 -R /var/www/html
-
-RUN apt-get clean \ 
-    && apt-get autoclean \ 
-    && apt-get autoremove --purge -y \ 
-    && rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
