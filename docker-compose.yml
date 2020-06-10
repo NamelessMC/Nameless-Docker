@@ -8,6 +8,7 @@ services:
     volumes: ['/srv/namelessmc/web:/data']
     # environment:
     #   PHP_FPM: namelessmc_php:9000
+    depends_on: [namelessmc_php]
     restart: unless-stopped
 
   namelessmc_php:
