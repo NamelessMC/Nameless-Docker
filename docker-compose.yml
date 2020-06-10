@@ -1,23 +1,26 @@
-version: '3.1'
+version: '2'
 
 services:
 
-  nameless:
-    build:
-      context: src
+  namelessmc:
+    image: derkades/namelessmc-nginx
+    ports: ['80:80']
+    volumes: ['/srv/namelessmc/web:/data']
+    # environment:
+    #   PHP_FPM: namelessmc_php:9000
     restart: unless-stopped
-    links:
-      - db
-    ports:
-      - "80:80"
 
-  db:
-    image: mysql:5.7
+  namelessmc_php:
+    image: derkades/namelessmc-php
+    volumes_from: [namelessmc]
     restart: unless-stopped
-    expose:
-      - 3306
+
+  namelessmc_db:
+    image: mariadb
+    volumes: ['/srv/namelessmc/db:/var/lib/mysql']
     environment:
-      - "MYSQL_ROOT_PASSWORD=nameless"
-      - "MYSQL_USER=nameless"
-      - "MYSQL_PASSWORD=nameless"
-      - "MYSQL_DATABASE=nameless"
+      MYSQL_ROOT_PASSWORD: nameless
+      MYSQL_USER: nameless
+      MYSQL_PASSWORD: nameless
+      MYSQL_DATABASE: nameless
+    restart: unless-stopped
