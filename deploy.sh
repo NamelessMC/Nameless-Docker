@@ -6,6 +6,6 @@ set +e
 docker buildx rm namelessmc_builder
 set -e
 docker buildx create --use --name namelessmc_builder
-docker buildx build -t namelessmc-nginx --platform=linux/arm,linux/arm64,linux/amd64 nginx_web --push
-docker buildx build -t namelessmc-php --platform=linux/arm,linux/arm64,linux/amd64 php_fpm --push
+docker buildx build -t namelessmc/namelessmc-nginx --platform=linux/arm,linux/arm64,linux/amd64 nginx_web --push
+docker buildx build -t namelessmc/namelessmc-php --platform=linux/arm,linux/arm64,linux/amd64 php_fpm --push
 docker buildx rm namelessmc_builder
