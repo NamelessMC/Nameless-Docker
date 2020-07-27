@@ -12,14 +12,17 @@ You have to manually install Docker first if you don't have it installed on your
 
 You will need to install [Docker Compose](https://docs.docker.com/compose/) for automated deploying.
 
-```bash
-sudo apt install docker-compose
+```shell
+$ apt install docker-compose # debian
 ```
 
-Download the example file, optionally change the directories, passwords, etc. then run it with
+Download the example file, optionally change the directories, passwords, etc. then run it
 
-```bash
-docker-compose up -d
+```shell
+$ git clone https://github.com/NamelessMC/Nameless-Docker.git
+$ cd Nameless-Docker
+$ vim docker-compose.dev.yaml
+$ docker-compose up -d
 ```
 
 When the containers are up, visit the website in a browser to start the installer. By default it listens on any interface, port 80.
