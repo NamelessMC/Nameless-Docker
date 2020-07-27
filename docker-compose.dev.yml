@@ -2,17 +2,17 @@ version: '2'
 
 services:
 
-  namelessmc:
+  nginx:
     build: nginx_web
     ports: ['80:80']
     volumes: ['/srv/namelessmc/web:/data'] # same as php container
     depends_on: [namelessmc_php]
 
-  namelessmc_php:
+  php:
     build: php_fpm
     volumes: ['/srv/namelessmc/web:/data'] # same as web container
 
-  namelessmc_db:
+  db:
     image: mariadb
     volumes: ['/srv/namelessmc/db:/var/lib/mysql']
     environment:
