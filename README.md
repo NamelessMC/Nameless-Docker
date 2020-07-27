@@ -27,4 +27,4 @@ $ docker-compose up -d
 
 When the containers are up, visit the website in a browser to start the installer. By default it listens on any interface, port 80.
 
-When the database configuration page shows up, fill in `namelessmc_db` for the *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
+When the database configuration page shows up, fill in `db` for the *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
