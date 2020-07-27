@@ -2,21 +2,21 @@ version: '2'
 
 services:
 
-  namelessmc:
-    image: derkades/namelessmc-nginx
+  nginx:
+    image: namelessmc/nameless-nginx
     ports: ['80:80']
     volumes: ['/srv/namelessmc/web:/data'] # same as php container
     # environment:
-    #   PHP_FPM: namelessmc_php:9000
-    depends_on: [namelessmc_php]
+    #   PHP_FPM: php:9000
+    depends_on: [php]
     restart: unless-stopped
 
-  namelessmc_php:
-    image: derkades/namelessmc-php
+  php:
+    image: namelessmc/nameless-php
     volumes: ['/srv/namelessmc/web:/data'] # same as web container
     restart: unless-stopped
 
-  namelessmc_db:
+  db:
     image: mariadb
     volumes: ['/srv/namelessmc/db:/var/lib/mysql']
     environment:
