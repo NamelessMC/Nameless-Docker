@@ -7,12 +7,10 @@ services:
     ports: ['80:80']
     volumes: ['/srv/namelessmc/web:/data'] # same as php container
     depends_on: [namelessmc_php]
-    restart: unless-stopped
 
   namelessmc_php:
     build: php_fpm
     volumes: ['/srv/namelessmc/web:/data'] # same as web container
-    restart: unless-stopped
 
   namelessmc_db:
     image: mariadb
@@ -22,4 +20,3 @@ services:
       MYSQL_USER: nameless
       MYSQL_PASSWORD: nameless
       MYSQL_DATABASE: nameless
-    restart: unless-stopped
