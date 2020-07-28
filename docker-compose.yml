@@ -3,7 +3,7 @@ version: '2'
 services:
 
   nginx:
-    image: namelessmc/nameless-nginx
+    image: namelessmc/nginx
     ports: ['80:80']
     volumes: ['/srv/namelessmc/web:/data'] # same as php container
     # environment:
@@ -12,7 +12,7 @@ services:
     restart: unless-stopped
 
   php:
-    image: namelessmc/nameless-php
+    image: namelessmc/php
     volumes: ['/srv/namelessmc/web:/data'] # same as web container
     restart: unless-stopped
 
