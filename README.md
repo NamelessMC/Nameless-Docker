@@ -16,12 +16,8 @@ You will need to install [Docker Compose](https://docs.docker.com/compose/) for 
 sudo apt install docker-compose
 ```
 
-Download the example file, optionally change the directories, passwords, etc. then run it with
-
-```bash
-docker-compose up -d
-```
+Download [docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/raw/master/docker-compose.yml), optionally change some settings, then run `docker-compose up -d`. The default restart policy is `unless-stopped` so your website will start back up after a reboot.
 
 When the containers are up, visit the website in a browser to start the installer. By default it listens on any interface, port 80.
 
-When the database configuration page shows up, fill in `db` for the *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
+When the database configuration page shows up, fill in `db` for *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
