@@ -21,3 +21,8 @@ Download [docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/raw/
 When the containers are up, visit the website in a browser to start the installer. By default it listens on any interface, port 80.
 
 When the database configuration page shows up, fill in `db` for *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
+
+
+## Development
+
+If you want to use Docker for developing NamelessMC, please see the [docker compose file in the main repo](https://github.com/NamelessMC/Nameless/blob/v2/docker-compose.yaml).
