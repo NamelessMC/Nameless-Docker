@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-ENV PHP_FPM="namelessmc_php:9000"
+ENV PHP_FPM="php:9000"
 
 RUN deluser xfs && \
     delgroup www-data && \
