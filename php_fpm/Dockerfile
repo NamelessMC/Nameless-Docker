@@ -18,6 +18,4 @@ ADD entrypoint.sh /
 
 ENV NAMELESSMC_VERSION=2.0.0-pr7
 
-VOLUME [ "/data" ]
-
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
