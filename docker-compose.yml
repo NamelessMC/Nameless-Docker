@@ -1,23 +1,27 @@
-version: '3.1'
+version: '2'
 
 services:
 
-  nameless:
-    build:
-      context: src
+  nginx:
+    image: namelessmc/nginx
+    ports: ['80:80']
+    volumes: ['/srv/namelessmc/web:/data'] # same as php container
+    # environment:
+    #   PHP_FPM: php:9000
+    depends_on: [php]
     restart: unless-stopped
-    links:
-      - db
-    ports:
-      - "80:80"
+
+  php:
+    image: namelessmc/php
+    volumes: ['/srv/namelessmc/web:/data'] # same as web container
+    restart: unless-stopped
 
   db:
-    image: mysql:5.7
-    restart: unless-stopped
-    expose:
-      - 3306
+    image: mariadb
+    volumes: ['/srv/namelessmc/db:/var/lib/mysql']
     environment:
-      - "MYSQL_ROOT_PASSWORD=nameless"
-      - "MYSQL_USER=nameless"
-      - "MYSQL_PASSWORD=nameless"
-      - "MYSQL_DATABASE=nameless"
+      MYSQL_ROOT_PASSWORD: nameless
+      MYSQL_USER: nameless
+      MYSQL_PASSWORD: nameless
+      MYSQL_DATABASE: nameless
+    restart: unless-stopped
