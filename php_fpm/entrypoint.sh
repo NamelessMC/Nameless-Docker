@@ -14,7 +14,7 @@ else
     mv Nameless-*/{,.[^.]}* "/data"
     chown -R www-data:www-data /data
     chmod 755 -R /data
-    rm -rf /tmp
+    rm -rf /tmp/*
     set +x
     echo "Done!"
 fi
