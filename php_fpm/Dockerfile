@@ -10,7 +10,6 @@ RUN docker-php-source extract && \
     docker-php-ext-install -j "$(nproc)" exif gd pdo_mysql mysqli && \
     docker-php-source delete && \
     apt-get purge -y $BUILD_DEPS && \
-    apt-get clean && \
     apt-get autoremove --purge -y && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
 
