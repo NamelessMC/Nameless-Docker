@@ -1,7 +1,5 @@
 FROM php:7.4-fpm
 
-ARG NAMELESSMC_VERSION=2.0.0-pr7
-
 RUN docker-php-source extract && \
     BUILD_DEPS="libmcrypt-dev libldap2-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev" && \
     apt-get update && \
@@ -15,6 +13,7 @@ RUN docker-php-source extract && \
 
 ADD entrypoint.sh /
 
-ENV NAMELESSMC_VERSION=2.0.0-pr7
+ARG VERSION=v2.0.0-pr7
+ENV VERSION=${VERSION}
 
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]

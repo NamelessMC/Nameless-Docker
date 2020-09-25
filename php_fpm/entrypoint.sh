@@ -9,9 +9,9 @@ else
     set -x
     mkdir -p /data
     cd /tmp
-    curl -Lo nameless.tar.gz https://github.com/NamelessMC/Nameless/archive/v$NAMELESSMC_VERSION.tar.gz
-    tar -xf nameless.tar.gz
-    mv Nameless-$NAMELESSMC_VERSION/{,.[^.]}* /data
+    curl -Lo "nameless.tar.gz" "https://github.com/NamelessMC/Nameless/archive/${VERSION}.tar.gz"
+    tar -xf "nameless.tar.gz"
+    mv Nameless-*/{,.[^.]}* "/data"
     chown -R www-data:www-data /data
     chmod 755 -R /data
     rm -rf /tmp
