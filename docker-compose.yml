@@ -9,12 +9,12 @@ services:
     # environment:
     #   PHP_FPM: php:9000
     depends_on: [php]
-    restart: unless-stopped
+    restart: always
 
   php:
     image: namelessmc/php
     volumes: ['/srv/namelessmc/web:/data'] # same as web container
-    restart: unless-stopped
+    restart: always
 
   db:
     image: mariadb
@@ -24,4 +24,4 @@ services:
       MYSQL_USER: nameless
       MYSQL_PASSWORD: nameless
       MYSQL_DATABASE: nameless
-    restart: unless-stopped
+    restart: always

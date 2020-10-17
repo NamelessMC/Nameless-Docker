@@ -16,7 +16,7 @@ You will need to install [Docker Compose](https://docs.docker.com/compose/) for 
 sudo apt install docker-compose
 ```
 
-Download [docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/raw/master/docker-compose.yml), optionally change some settings, then run `docker-compose up -d`. The default restart policy is `unless-stopped` so your website will start back up after a reboot.
+Download [docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/raw/master/docker-compose.yml), optionally change some settings, then run `docker-compose up -d`. The default restart policy is `always` so your website will start back up after a reboot.
 
 When the containers are up, visit the website in a browser to start the installer. By default it listens on any interface, port 80.
 
