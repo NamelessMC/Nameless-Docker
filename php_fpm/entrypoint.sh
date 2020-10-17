@@ -15,6 +15,15 @@ else
     chown -R www-data:www-data /data
     chmod 755 -R /data
     rm -rf /tmp/*
+    # remove some unnecessary files
+    cd /data
+    rm -f \
+        web.config.example \
+        nginx.example \
+        README.md \
+        CONTRIBUTORS.md \
+        .gitignore \
+        .htaccess
     set +x
     echo "Done!"
 fi
