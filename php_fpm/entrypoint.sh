@@ -18,12 +18,15 @@ else
     # remove some unnecessary files
     cd /data
     rm -f \
-        web.config.example \
+        .gitignore \
+        .htaccess \
+        changelog.txt \
+        CONTRIBUTORS.md \
+        docker-compose.yaml \
+        Dockerfile \
         nginx.example \
         README.md \
-        CONTRIBUTORS.md \
-        .gitignore \
-        .htaccess
+        web.config.example \
     set +x
     echo "Done!"
 fi
