@@ -5,7 +5,7 @@ services:
   nginx:
     image: namelessmc/nginx
     ports: ['80:80']
-    volumes: ['/srv/namelessmc/web:/data'] # same as php container
+    volumes: ['./web:/data'] # same as php container
     # environment:
     #   PHP_FPM: php:9000
     depends_on: [php]
@@ -13,12 +13,12 @@ services:
 
   php:
     image: namelessmc/php
-    volumes: ['/srv/namelessmc/web:/data'] # same as web container
+    volumes: ['./web:/data'] # same as web container
     restart: always
 
   db:
     image: mariadb
-    volumes: ['/srv/namelessmc/db:/var/lib/mysql']
+    volumes: ['./db:/var/lib/mysql']
     environment:
       MYSQL_ROOT_PASSWORD: nameless
       MYSQL_USER: nameless
