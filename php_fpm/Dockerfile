@@ -10,6 +10,8 @@ RUN BUILD_DEPS="libmcrypt-dev libldap2-dev" && \
     apt-get autoremove --purge -y && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
 
+RUN echo "upload_max_filesize = 512M" > /usr/local/etc/php/conf.d/nameless.ini
+
 ADD entrypoint.sh /
 
 ARG VERSION=v2.0.0-pr7
