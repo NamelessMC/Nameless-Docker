@@ -26,3 +26,11 @@ When the database configuration page shows up, fill in `db` for *database addres
 ## Development
 
 If you want to use Docker for developing NamelessMC, please see the [docker compose file in the main repo](https://github.com/NamelessMC/Nameless/blob/v2/docker-compose.yaml).
+
+## Available tags
+| Tag | NamelessMC version | PHP version
+| --- | ------------------ | -----------
+pr7 | v2.0.0-pr7 | 7.4
+pr8 | v2.0.0-pr8 | 7.4
+pr9dev | v2 development (unstable) | 7.4
+pr9dev-php8 | v2 development (unstable) | 8.0
