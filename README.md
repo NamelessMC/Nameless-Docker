@@ -27,6 +27,9 @@ When the database configuration page shows up, fill in `db` for *database addres
 
 If you want to use Docker for developing NamelessMC, please see the [docker compose file in the main repo](https://github.com/NamelessMC/Nameless/blob/v2/docker-compose.yaml).
 
+## Updating
+First, follow regular update instructions on the website (uploading files etc). After the upgrade is complete and your website is back up, change the image tag to the new version (e.g. change from `pr7` to `pr8`) to get the newest PHP library versions.
+
 ## Available tags
 | Tag | NamelessMC version | PHP version
 | --- | ------------------ | -----------
