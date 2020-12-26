@@ -13,6 +13,7 @@ docker buildx build \
         -t namelessmc/nginx:v2-pr7 \
         -t namelessmc/nginx:v2-pr8 \
         -t namelessmc/nginx:v2-pr9dev \
+        -t namelessmc/nginx:v2-pr9dev-php8 \
         --platform=linux/arm,linux/arm64,linux/amd64 nginx_web --push
 
 deploy_php(){
