@@ -1,4 +1,5 @@
-FROM php:7.4-fpm
+ARG PHP_VERSION=7.4
+FROM php:${PHP_VERSION}-fpm
 
 RUN BUILD_DEPS="libmcrypt-dev libldap2-dev" && \
     RUNTIME_DEPS="libjpeg62-turbo-dev libfreetype6-dev libpng-dev libfreetype6-dev curl tar" && \
@@ -10,11 +11,16 @@ RUN BUILD_DEPS="libmcrypt-dev libldap2-dev" && \
     apt-get autoremove --purge -y && \
     rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
 
-RUN echo "upload_max_filesize = 512M" > /usr/local/etc/php/conf.d/nameless.ini
+RUN { \
+        echo "upload_max_filesize = 512M"; \
+        echo "post_max_size = 512M"; \
+        echo "max_input_time = 600"; \
+        echo "max_execution_time = 600"; \
+    } > /usr/local/etc/php/conf.d/nameless.ini
 
 ADD entrypoint.sh /
 
-ARG VERSION=v2.0.0-pr7
+ARG VERSION=v2.0.0-pr8
 ENV VERSION=${VERSION}
 
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]

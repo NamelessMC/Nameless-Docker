@@ -33,7 +33,7 @@ First, follow regular update instructions on the website (uploading files etc). 
 ## Available tags
 | Tag | NamelessMC version | PHP version
 | --- | ------------------ | -----------
-pr7 | v2.0.0-pr7 | 7.4
-pr8 | v2.0.0-pr8 | 7.4
-pr9dev | v2 development (unstable) | 7.4
-pr9dev-php8 | v2 development (unstable) | 8.0
+v2-pr7 | v2.0.0-pr7 | 7.4
+v2-pr8 | v2.0.0-pr8 | 7.4
+v2-pr9dev | v2 development (unstable) | 7.4
+v2-pr9dev-php8 | v2 development (unstable) | 8.0
