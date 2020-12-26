@@ -26,4 +26,4 @@ deploy_php(){
 deploy_php  v2-pr7          7.4 v2.0.0-pr7
 deploy_php  v2-pr8          7.4 v2.0.0-pr8
 deploy_php  v2-pr9dev       7.4 v2
-deploy_php  v2-pr8dev-php8  8.0 v2
+deploy_php  v2-pr9dev-php8  8.0 v2
