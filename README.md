@@ -31,11 +31,11 @@ If you want to use Docker for developing NamelessMC, please see the [docker comp
 First, follow regular update instructions on the website (uploading files etc). After the upgrade is complete and your website is back up, change the image tag to the new version (e.g. change from `v2-pr7` to `v2-pr8`) to get the newest PHP library versions.
 
 ## Available tags
-| Tag | NamelessMC version | PHP version
-| --- | ------------------ | -----------
-v2-pr7 | v2.0.0-pr7 | 7.4
-v2-pr8 | v2.0.0-pr8 | 7.4
-v2-pr9 | v2.0.0-pr9 | 7.4
-v2-pr9-php8 | v2.0.0-pr9 | 8.0
-dev | v2 development (unstable) | 7.4
-dev-php8 | v2 development (unstable) | 8.0
+| Tag | NamelessMC version | PHP version | Receives updates | Notes
+| --- | ------------------ | ----------- | ---------------- | -----
+v2-pr7 | v2.0.0-pr7 | 7.4 | Yes | Old
+v2-pr8 | v2.0.0-pr8 | 7.4 | Yes | Old
+v2-pr9 | v2.0.0-pr9 | 7.4 | Yes | Recommended version
+v2-pr9-php8 | v2.0.0-pr9 | 8.0 | Yes | There are still some PHP 8 bugs, use php 7.4
+dev | v2 development | 7.4 | Yes | Testing only, reinstall frequently.
+dev-php8 | v2 development | 8.0 | Yes | Testing only, reinstall frequently.
