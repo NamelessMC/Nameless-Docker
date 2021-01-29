@@ -23,4 +23,7 @@ ADD entrypoint.sh /
 ARG VERSION=v2.0.0-pr8
 ENV VERSION=${VERSION}
 
+# Used by website to know if it runs using our docker images for statistics
+ENV NAMELESSMC_METRICS_DOCKER=true
+
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
