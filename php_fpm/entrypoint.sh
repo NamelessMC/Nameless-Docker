@@ -17,8 +17,9 @@ else
     rm -rf /tmp/*
     # remove some unnecessary files
     cd /data
-    rm -f \
+    rm -rf \
         .gitignore \
+        .github
         .htaccess \
         changelog.txt \
         CONTRIBUTORS.md \
