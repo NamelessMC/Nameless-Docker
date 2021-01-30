@@ -2,7 +2,7 @@ ARG PHP_VERSION=7.4
 FROM php:${PHP_VERSION}-fpm
 
 RUN BUILD_DEPS="libmcrypt-dev libldap2-dev" && \
-    RUNTIME_DEPS="libjpeg62-turbo-dev libfreetype6-dev libpng-dev libfreetype6-dev curl tar" && \
+    RUNTIME_DEPS="libjpeg62-turbo-dev libfreetype6-dev libpng-dev libfreetype6-dev curl tar sendmail" && \
     apt-get update && \
     apt-get install -y --no-install-recommends $BUILD_DEPS $RUNTIME_DEPS && \
     docker-php-ext-configure gd --with-freetype --with-jpeg && \
