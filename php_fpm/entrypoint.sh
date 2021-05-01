@@ -29,7 +29,7 @@ else
         nginx.example \
         README.md \
         web.config.example \
-        uploads/placeholder.txt \
+        uploads/placeholder.txt
     set +x
     echo "Done!"
 fi
