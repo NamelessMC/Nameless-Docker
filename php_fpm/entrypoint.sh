@@ -19,8 +19,9 @@ else
     cd /data
     rm -rf \
         .gitignore \
-        .github
+        .github \
         .htaccess \
+        cache/.htaccess \
         changelog.txt \
         CONTRIBUTORS.md \
         docker-compose.yaml \
@@ -28,6 +29,7 @@ else
         nginx.example \
         README.md \
         web.config.example \
+        uploads/placeholder.txt \
     set +x
     echo "Done!"
 fi
