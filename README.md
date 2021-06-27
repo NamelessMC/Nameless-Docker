@@ -35,8 +35,10 @@ First, follow regular update instructions on the website (uploading files etc). 
 | --- | ------------------ | ----------- | ---------------- | -----
 v2-pr7 | v2.0.0-pr7 | 7.4 | Yes | Old
 v2-pr8 | v2.0.0-pr8 | 7.4 | Yes | Old
-v2-pr9 | v2.0.0-pr9 | 7.4 | Yes | Recommended version
-v2-pr9-php8 | v2.0.0-pr9 | 8.0 | Yes | There are still some PHP 8 bugs, use php 7.4
+v2-pr9 | v2.0.0-pr9 | 7.4 | Yes | Old
+v2-pr9-php8 | v2.0.0-pr9 | 8.0 | Yes | Old, php 7.4 recommended
+**v2-pr10** | **v2.0.0-pr10** | **8.0** | **Yes** | **Recommended**
+v2-pr10-php74 | v2.0.0-pr10 | 7.4 | Yes | Use if you experience php 8 related bugs
 dev | v2 development | 7.4 | Yes | Testing only, reinstall frequently.
 dev-php8 | v2 development | 8.0 | Yes | Testing only, reinstall frequently.
 

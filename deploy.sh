@@ -30,5 +30,7 @@ deploy_php  v2-pr7          7.4 v2.0.0-pr7
 deploy_php  v2-pr8          7.4 v2.0.0-pr8
 deploy_php  v2-pr9          7.4 v2.0.0-pr9
 deploy_php  v2-pr9-php8     8.0 v2.0.0-pr9
+deploy_php  v2-pr10         8.0 v2.0.0-pr10
+deploy_php  v2-pr10-php74   8.0 v2.0.0-pr10
 deploy_php  dev             7.4 v2
 deploy_php  dev-php8        8.0 v2
