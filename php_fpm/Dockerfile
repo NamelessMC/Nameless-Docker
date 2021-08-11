@@ -35,6 +35,9 @@ ENV VERSION=${VERSION}
 ENV NAMELESSMC_METRICS_DOCKER=true
 
 # Hide path option in the installer, subdirectories are not compatible with the nginx configuration
-ENV NAMELESS_PATH_HIDE=1
+ENV NAMELESS_PATH_HIDE=true
+
+# Enable friendly URLs and hide the option by default, they work fine with the included configuration and there is no reason to turn it off.
+ENV NAMELESS_FRIENDLY_URLS=true NAMELESS_FRIENDLY_URLS_HIDE=true
 
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
