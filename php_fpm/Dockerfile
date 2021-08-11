@@ -34,4 +34,7 @@ ENV VERSION=${VERSION}
 # Used by website to know if it runs using our docker images for statistics
 ENV NAMELESSMC_METRICS_DOCKER=true
 
+# Hide path option in the installer, subdirectories are not compatible with the nginx configuration
+ENV NAMELESS_PATH_HIDE=1
+
 ENTRYPOINT [ "bash", "/entrypoint.sh" ]
