@@ -30,6 +30,9 @@ else
         README.md \
         web.config.example \
         uploads/placeholder.txt
+    # fix permissions
+    find . -type d -exec chmod 700 {} \;
+    find . -type f -exec chmod 600 {} \;
     set +x
     echo "Done!"
 fi
