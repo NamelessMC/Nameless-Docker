@@ -26,7 +26,7 @@ deploy_php(){
     docker buildx build \
         -t namelessmc/php:$1 \
         --build-arg PHP_VERSION=$2 --build-arg VERSION=$3 \
-        --platform=linux/arm,linux/arm64,linux/amd64 php_fpm --push
+        --platform=linux/amd64 php_fpm --push
 }
 
 #           Tag             PHP NamelessMC
