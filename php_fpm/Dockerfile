@@ -24,7 +24,7 @@ RUN { \
         echo "pm.start_servers = 1"; \
         echo "pm.min_spare_servers = 1"; \
         echo "pm.max_spare_servers = 4" ; \
-    } > /usr/local/etc/php-fpm.d/nameless.conf
+    } > /usr/local/etc/php-fpm.d/zz-nameless.conf
 
 ADD entrypoint.sh /
 
