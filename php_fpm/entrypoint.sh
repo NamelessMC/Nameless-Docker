@@ -12,8 +12,6 @@ else
     curl -Lo "nameless.tar.gz" "https://github.com/NamelessMC/Nameless/archive/${VERSION}.tar.gz"
     tar -xf "nameless.tar.gz"
     mv Nameless-*/{,.[^.]}* "/data"
-    chown -R www-data:www-data /data
-    chmod 755 -R /data
     rm -rf /tmp/*
     # remove some unnecessary files
     cd /data
@@ -31,6 +29,7 @@ else
         web.config.example \
         uploads/placeholder.txt
     # fix permissions
+    chown -R www-data:www-data /data
     find . -type d -exec chmod 750 {} \;
     find . -type f -exec chmod 640 {} \;
     set +x
