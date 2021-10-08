@@ -35,8 +35,7 @@ First, follow regular update instructions on the website (uploading files etc). 
 | --- | ------------------ | ----------- | ---------------- | -----
 **v2-pr11** | **v2.0.0-pr11** | **8.0** | **Yes** | **Recommended**
 v2-pr11-php74 | v2.0.0-pr11 | 7.4 | Yes | For compatibility with legacy modules
-dev | v2 development | 7.4 | Yes | Testing only, reinstall frequently.
-dev-php8 | v2 development | 8.0 | Yes | Testing only, reinstall frequently.
+dev | v2 development | 8.0 | Yes | Testing only, reinstall frequently.
 
 ### Legacy tags
 
@@ -48,5 +47,6 @@ v2-pr9 | v2.0.0-pr9 | 7.4 | Yes |
 v2-pr9-php8 | v2.0.0-pr9 | 8.0 | Yes | Experimental
 v2-pr10 | v2.0.0-pr10 | 8.0 | Yes | Use PHP 7.4 for compatibility
 v2-pr10-php74 | v2.0.0-pr10 | 7.4 | Yes |
+dev-php8 | v2 development | 8.0 | No | Use `:dev` instead, it now uses PHP 8
 
 \* Image updates, not NamelessMC updates. Only the latest NamelessMC version is supported.
