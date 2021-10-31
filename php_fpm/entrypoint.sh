@@ -27,7 +27,10 @@ else
         nginx.example \
         README.md \
         web.config.example \
-        uploads/placeholder.txt
+        uploads/placeholder.txt \
+        LICENSE.txt \
+        SECURITY.md \
+        phpstan.neon
     # fix permissions
     chown -R www-data:www-data /data
     find . -type d -exec chmod 750 {} \;
