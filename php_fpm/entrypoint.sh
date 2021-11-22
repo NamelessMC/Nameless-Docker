@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 if [ -n "$(ls -A /data 2>/dev/null)" ]
@@ -11,14 +11,11 @@ else
     cd /tmp
     curl -Lo "nameless.tar.gz" "https://github.com/NamelessMC/Nameless/archive/${VERSION}.tar.gz"
     tar -xf "nameless.tar.gz"
-    mv Nameless-*/{,.[^.]}* "/data"
+    mv Nameless-*/* "/data"
     rm -rf /tmp/*
-    # remove some unnecessary files
+    # remove some unnecessary files (dotfiles in the root directory are not copied in the first place)
     cd /data
     rm -rf \
-        .gitignore \
-        .github \
-        .htaccess \
         cache/.htaccess \
         changelog.txt \
         CONTRIBUTORS.md \

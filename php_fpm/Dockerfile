@@ -1,24 +1,24 @@
 ARG PHP_VERSION=7.4
-FROM php:${PHP_VERSION}-fpm
+FROM php:${PHP_VERSION}-fpm-alpine
 
-RUN BUILD_DEPS="libmcrypt-dev libldap2-dev" && \
-    RUNTIME_DEPS="libjpeg62-turbo-dev libfreetype6-dev libpng-dev libfreetype6-dev libzip-dev curl tar sendmail" && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends $BUILD_DEPS $RUNTIME_DEPS && \
-    docker-php-ext-configure gd --with-freetype --with-jpeg && \
-    docker-php-ext-install -j "$(nproc)" exif gd pdo_mysql mysqli zip && \
-    apt-get purge -y $BUILD_DEPS && \
-    apt-get autoremove --purge -y && \
-    rm -rf /var/lib/{apt,dpkg,cache,log}/ /tmp/* /var/tmp/*
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions gd pdo_mysql mysqli zip exif
+
+# Set www-data user and group to id 33 which is standard in Debian
+RUN deluser xfs && \
+    apk add --no-cache shadow && \
+    usermod -u 33 www-data && \
+    groupmod -g 33 www-data && \
+    apk del shadow
 
 RUN { \
         echo "upload_max_filesize = 512M"; \
         echo "post_max_size = 512M"; \
         echo "max_input_time = 300"; \
         echo "max_execution_time = 300"; \
-    } > /usr/local/etc/php/conf.d/nameless.ini
-
-RUN { \
+    } > /usr/local/etc/php/conf.d/nameless.ini && \
+    { \
         echo "[www]"; \
         echo "pm.max_children = 32"; \
         echo "pm.start_servers = 1"; \
@@ -28,7 +28,7 @@ RUN { \
 
 ADD entrypoint.sh /
 
-ARG VERSION=v2.0.0-pr10
+ARG VERSION=v2.0.0-pr12
 ENV VERSION=${VERSION}
 
 # Used by website to know if it runs using our docker images for statistics
@@ -40,4 +40,4 @@ ENV NAMELESS_PATH_HIDE=true
 # Enable friendly URLs and hide the option by default, they work fine with the included configuration and there is no reason to turn it off.
 ENV NAMELESS_FRIENDLY_URLS=true NAMELESS_FRIENDLY_URLS_HIDE=true
 
-ENTRYPOINT [ "bash", "/entrypoint.sh" ]
+ENTRYPOINT [ "sh", "/entrypoint.sh" ]

@@ -2,12 +2,9 @@
 
 # Before running this, you need to install binfmt_misc support and create a builder:
 # docker run --privileged --rm tonistiigi/binfmt --install all
-# export DOCKER_CLI_EXPERIMENTAL=enabled
 # docker buildx create --use --name mybuilder
 # https://github.com/docker/buildx
 set -e
-
-export DOCKER_CLI_EXPERIMENTAL=enabled
 
 docker buildx build \
     -t namelessmc/nginx:v2-pr7 \
