@@ -5,12 +5,9 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd pdo_mysql mysqli zip exif
 
-# Set www-data user and group to id 33 which is standard in Debian
-RUN deluser xfs && \
-    apk add --no-cache shadow && \
-    usermod -u 33 www-data && \
-    groupmod -g 33 www-data && \
-    apk del shadow
+ENV WWW_DATA_UID=33 WWW_DATA_GID=33
+
+RUN apk add --no-cache shadow
 
 RUN { \
         echo "upload_max_filesize = 512M"; \

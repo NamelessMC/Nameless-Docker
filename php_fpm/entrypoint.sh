@@ -1,6 +1,24 @@
 #!/bin/sh
 set -e
 
+if [ -n "$(getent passwd "$WWW_DATA_UID")" ]
+then
+    USERNAME=$(getent passwd "$WWW_DATA_UID" | cut -d: -f1)
+    echo "Deleting user $USERNAME which already uses UID $WWW_DATA_UID"
+    deluser "$USERNAME"
+fi
+
+if [ -n "$(getent group "$WWW_DATA_GID")" ]
+then
+    GROUPNAME=$(getent passwd "$WWW_DATA_GID" | cut -d: -f1)
+    echo "Deleting group $GROUPNAME which already uses GID $WWW_DATA_GID"
+    delgroup "$GROUPNAME"
+fi
+
+echo "Setting www-data uid:gid to $WWW_DATA_UID:$WWW_DATA_GID"
+usermod -u "$WWW_DATA_UID" www-data
+groupmod -g "$WWW_DATA_GID" www-data
+
 if [ -n "$(ls -A /data 2>/dev/null)" ]
 then
     echo "Data directory contains files, not downloading NamelessMC"
