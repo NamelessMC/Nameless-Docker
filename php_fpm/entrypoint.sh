@@ -65,8 +65,9 @@ else
         LICENSE.txt \
         SECURITY.md \
         phpstan.neon
+    composer install
     # fix permissions
-    chown -R www-data:www-data /data
+    chown -R www-data:www-data .
     find . -type d -exec chmod 750 {} \;
     find . -type f -exec chmod 640 {} \;
     set +x

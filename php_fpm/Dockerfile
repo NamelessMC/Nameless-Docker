@@ -3,7 +3,7 @@ FROM php:${PHP_VERSION}-fpm-alpine
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions gd pdo_mysql mysqli zip exif
+    install-php-extensions @composer gd pdo_mysql mysqli zip exif
 
 ENV WWW_DATA_UID=33 WWW_DATA_GID=33
 
