@@ -7,16 +7,6 @@
 set -e
 
 docker buildx build \
-    -t namelessmc/nginx:v2-pr7 \
-    -t namelessmc/nginx:v2-pr8 \
-    -t namelessmc/nginx:v2-pr9 \
-    -t namelessmc/nginx:v2-pr9-php8 \
-    -t namelessmc/nginx:v2-pr10 \
-    -t namelessmc/nginx:v2-pr10-php74 \
-    -t namelessmc/nginx:v2-pr11 \
-    -t namelessmc/nginx:v2-pr11-php74 \
-    -t namelessmc/nginx:v2-pr12 \
-    -t namelessmc/nginx:v2-pr12-php74 \
     -t namelessmc/nginx:dev \
     --platform=linux/arm,linux/arm64,linux/amd64 nginx_web --push
 
@@ -28,14 +18,4 @@ deploy_php(){
 }
 
 #           Tag             PHP NamelessMC
-deploy_php  v2-pr7          7.4 v2.0.0-pr7
-deploy_php  v2-pr8          7.4 v2.0.0-pr8
-deploy_php  v2-pr9          7.4 v2.0.0-pr9
-deploy_php  v2-pr9-php8     8.0 v2.0.0-pr9
-deploy_php  v2-pr10         8.0 v2.0.0-pr10
-deploy_php  v2-pr10-php74   7.4 v2.0.0-pr10
-deploy_php  v2-pr11         8.0 v2.0.0-pr11
-deploy_php  v2-pr11-php74   7.4 v2.0.0-pr11
-deploy_php  v2-pr12         8.0 v2.0.0-pr12
-deploy_php  v2-pr12-php74   7.4 v2.0.0-pr12
 deploy_php  dev             8.0 v2
