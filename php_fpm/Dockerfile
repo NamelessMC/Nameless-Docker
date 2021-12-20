@@ -25,7 +25,7 @@ RUN { \
 
 ADD entrypoint.sh /
 
-ARG VERSION=v2.0.0-pr12
+ARG VERSION=v2
 ENV VERSION=${VERSION}
 
 # Used by website to know if it runs using our docker images for statistics
