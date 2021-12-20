@@ -1,15 +1,6 @@
 #!/bin/sh
 set -e
 
-if [ -n "$(getent group "$WWW_DATA_GID")" ]
-then
-    GROUPNAME=$(getent passwd "$WWW_DATA_GID" | cut -d: -f1)
-    echo "Deleting group $GROUPNAME which already uses GID $WWW_DATA_GID"
-    groupdel "$GROUPNAME"
-else
-    echo "GID $WWW_DATA_GID not in use"
-fi
-
 if [ -n "$(getent passwd "$WWW_DATA_UID")" ]
 then
     USERNAME=$(getent passwd "$WWW_DATA_UID" | cut -d: -f1)
@@ -17,6 +8,15 @@ then
     userdel "$USERNAME"
 else
     echo "UID $WWW_DATA_UID not in use"
+fi
+
+if [ -n "$(getent group "$WWW_DATA_GID")" ]
+then
+    GROUPNAME=$(getent passwd "$WWW_DATA_GID" | cut -d: -f1)
+    echo "Deleting group $GROUPNAME which already uses GID $WWW_DATA_GID"
+    groupdel "$GROUPNAME"
+else
+    echo "GID $WWW_DATA_GID not in use"
 fi
 
 if [ -n "$(getent group www-data)" ]
