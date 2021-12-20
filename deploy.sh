@@ -17,7 +17,6 @@ docker buildx build \
     -t namelessmc/nginx:v2-pr11-php74 \
     -t namelessmc/nginx:v2-pr12 \
     -t namelessmc/nginx:v2-pr12-php74 \
-    -t namelessmc/nginx:dev \
     --platform=linux/arm,linux/arm64,linux/amd64 nginx_web --push
 
 deploy_php(){
@@ -38,4 +37,3 @@ deploy_php  v2-pr11         8.0 v2.0.0-pr11
 deploy_php  v2-pr11-php74   7.4 v2.0.0-pr11
 deploy_php  v2-pr12         8.0 v2.0.0-pr12
 deploy_php  v2-pr12-php74   7.4 v2.0.0-pr12
-deploy_php  dev             8.0 v2
