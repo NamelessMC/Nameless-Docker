@@ -75,15 +75,8 @@ fi
 
 if [ -n "$NAMELESS_AUTO_INSTALL" ]
 then
-    cd /data
-    if [ -f core/config.php ]; then
-        echo "core/config.php exists, not running installer."
-    else
-        echo "Going to run installer, first waiting 10 seconds for the database to start"
-        sleep 10
-        echo "Running installer..."
-        php -f cli_install.php -- --iSwearIKnowWhatImDoing
-    fi
+    echo "NAMELESS_AUTO_INSTALL is only supported from pr13"
+    exit 1
 fi
 
 exec php-fpm
