@@ -11,8 +11,9 @@ services:
         target: /data
     # environment: # Change this if you rename the php container
     #   PHP_FPM: php:9000
+    # user: 'youruser'
     depends_on: [php]
-    restart: always
+    # restart: always
 
   php:
     image: namelessmc/php:v2-pr12
@@ -20,7 +21,8 @@ services:
       - type: bind # same as web container
         source: ./web
         target: /data
-    restart: always
+    # user: 'youruser'
+    # restart: always
 
   db:
     image: mariadb
@@ -33,4 +35,4 @@ services:
       MYSQL_USER: nameless
       MYSQL_PASSWORD: nameless
       MYSQL_DATABASE: nameless
-    restart: always
+    # restart: always
