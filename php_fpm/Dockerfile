@@ -33,9 +33,12 @@ ENV NAMELESS_PATH_HIDE=true
 # Enable friendly URLs and hide the option by default, they work fine with the included configuration and there is no reason to turn it off.
 ENV NAMELESS_FRIENDLY_URLS=true NAMELESS_FRIENDLY_URLS_HIDE=true
 
-ENV PHP_MAX_CHILDREN=32 \
-    PHP_MIN_SPARE_SERVERS=2 \
-    PHP_MAX_SPARE_SERVERS=4
+ENV PHP_PM="ondemand" \
+    PHP_PM_MAX_CHILDREN="16" \
+    PHP_PM_MAX_REQUESTS="200" \
+    PHP_PM_IDLE_TIMEOUT="1m" \
+    PHP_PM_MIN_SPARE_SERVERS="2" \
+    PHP_PM_MAX_SPARE_SERVERS="4"
 
 # The www-data user has uid 33 on Debian/Ubuntu which is what most people are used to
 USER 33
