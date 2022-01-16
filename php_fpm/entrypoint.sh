@@ -49,10 +49,13 @@ fi
 
 { \
     echo "[www]"
-    echo "pm.max_children = $PHP_MAX_CHILDREN"
-    echo "pm.start_servers = $PHP_MIN_SPARE_SERVERS"
-    echo "pm.min_spare_servers = $PHP_MIN_SPARE_SERVERS"
-    echo "pm.max_spare_servers = $PHP_MAX_SPARE_SERVERS"
+    echo "pm = $PHP_PM"
+    echo "pm.max_children = $PHP_PM_MAX_CHILDREN"
+    echo "pm.max_requests = $PHP_PM_MAX_REQUESTS"
+    echo "pm.process_idle_timeout = $PHP_PM_IDLE_TIMEOUT"
+    echo "pm.start_servers = $PHP_PM_MIN_SPARE_SERVERS"
+    echo "pm.min_spare_servers = $PHP_PM_MIN_SPARE_SERVERS"
+    echo "pm.max_spare_servers = $PHP_PM_MAX_SPARE_SERVERS"
 } > /tmp/additional-php-fpm-settings.conf # this file is symlinked to the correct php-fpm configuration dir
 
 exec php-fpm
