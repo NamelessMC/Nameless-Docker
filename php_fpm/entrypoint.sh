@@ -34,10 +34,7 @@ else
         SECURITY.md \
         phpstan.neon
     composer install
-    # fix permissions
-    # chown -R www-data:www-data .
-    find . -type d -exec chmod 750 {} \;
-    find . -type f -exec chmod 640 {} \;
+    chmod -R ugo-x,u+rwX,go-rw . # Files 600 directories 700
     set +x
     echo "Done!"
 fi
