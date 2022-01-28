@@ -18,4 +18,4 @@ deploy_php(){
 }
 
 #           Tag             PHP NamelessMC
-deploy_php  dev             8.0 v2
+deploy_php  dev             8.1 v2

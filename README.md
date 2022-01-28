@@ -35,7 +35,7 @@ First, follow regular update instructions on the website (uploading files etc). 
 | --- | ------------------ | ----------- | ---------------- | -----
 **v2-pr12** | **v2.0.0-pr12** | **8.0** | **Yes** | **Recommended**
 v2-pr12-php74 | v2.0.0-pr12 | 7.4 | Yes | For compatibility with legacy modules
-dev | v2 development | 8.0 | Yes | Testing only, reinstall frequently.
+dev | v2 development | 8.1 | Yes | Testing only, reinstall frequently.
 
 ### Legacy tags
 
