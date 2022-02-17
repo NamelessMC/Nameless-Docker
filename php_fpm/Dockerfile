@@ -40,6 +40,9 @@ ENV PHP_PM="ondemand" \
     PHP_PM_MIN_SPARE_SERVERS="2" \
     PHP_PM_MAX_SPARE_SERVERS="4"
 
+RUN mkdir /data && \
+    chown 33:33 /data
+
 # The www-data user has uid 33 on Debian/Ubuntu which is what most people are used to
 USER 33
 
