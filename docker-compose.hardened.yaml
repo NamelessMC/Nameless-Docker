@@ -1,0 +1,55 @@
+version: '2.4'
+
+services:
+
+  nginx:
+    image: namelessmc/nginx:v2-pr12
+    ports: ['80:80']
+    volumes:
+      - type: bind # same as php container
+        source: ./web
+        target: /data
+    # environment: # Change this if you rename the php container
+    #   PHP_FPM: php:9000
+    # user: 'youruser'
+    depends_on: [php]
+    # restart: always
+    cap_drop: ['ALL']
+    cap_add: ['NET_BIND_SERVICE', 'NET_RAW']
+    mem_limit: 1024M
+    cpus: 1
+    ulimits:
+      nofile: 50000
+      nproc: 5000
+    security_opt: 'no-new-privileges:true'
+
+  php:
+    image: namelessmc/php:v2-pr12
+    volumes:
+      - type: bind # same as web container
+        source: ./web
+        target: /data
+    # user: 'youruser'
+    # restart: always
+    cap_drop: ['ALL']
+    cap_add: ['NET_RAW']
+    cpus: 2
+    mem_limit: 2048M
+    read_only: true
+    ulimits:
+      nofile: 5000
+      nproc: 5000
+    security_opt: 'no-new-privileges:true'
+
+  db:
+    image: mariadb
+    volumes:
+      - type: bind
+        source: ./db
+        target: /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: nameless
+      MYSQL_USER: nameless
+      MYSQL_PASSWORD: nameless
+      MYSQL_DATABASE: nameless
+    # restart: always
