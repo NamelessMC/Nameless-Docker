@@ -4,24 +4,26 @@ services:
 
   nginx:
     image: namelessmc/nginx:v2-pr12
-    ports: ['80:80']
+    ports: ['8080:8080']
     volumes:
       - type: bind # same as php container
         source: ./web
         target: /data
-    # environment: # Change this if you rename the php container
-    #   PHP_FPM: php:9000
-    # user: 'youruser'
+    environment:
+      NGINX_PORT: 8080
+      # Change this if you rename the php container
+      # PHP_FPM: php:9000
     depends_on: [php]
-    # restart: always
+    user: '1000' # change this
     cap_drop: ['ALL']
-    cap_add: ['NET_BIND_SERVICE', 'NET_RAW']
+    cap_add: ['NET_RAW']
     mem_limit: 1024M
     cpus: 1
     ulimits:
       nofile: 50000
       nproc: 5000
-    security_opt: 'no-new-privileges:true'
+    security_opt: ['no-new-privileges:true']
+    # restart: always
 
   php:
     image: namelessmc/php:v2-pr12
@@ -29,8 +31,12 @@ services:
       - type: bind # same as web container
         source: ./web
         target: /data
-    # user: 'youruser'
-    # restart: always
+      - target: /tmp
+        tmpfs:
+          size: 100M
+        type: tmpfs
+    depends_on: [db]
+    user: '1000' # change this
     cap_drop: ['ALL']
     cap_add: ['NET_RAW']
     cpus: 2
@@ -39,7 +45,8 @@ services:
     ulimits:
       nofile: 5000
       nproc: 5000
-    security_opt: 'no-new-privileges:true'
+    security_opt: ['no-new-privileges:true']
+    # restart: always
 
   db:
     image: mariadb
@@ -47,6 +54,7 @@ services:
       - type: bind
         source: ./db
         target: /var/lib/mysql
+    user: '1000' # change this
     environment:
       MYSQL_ROOT_PASSWORD: nameless
       MYSQL_USER: nameless
