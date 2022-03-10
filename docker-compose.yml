@@ -4,7 +4,7 @@ services:
 
   nginx:
     image: namelessmc/nginx:v2-pr12
-    ports: ['80:80']
+    ports: ['8080:8080']
     volumes:
       - type: bind # same as php container
         source: ./web

@@ -9,8 +9,7 @@ services:
       - type: bind # same as php container
         source: ./web
         target: /data
-    environment:
-      NGINX_PORT: 8080
+    # environment:
       # Change this if you rename the php container
       # PHP_FPM: php:9000
     depends_on: [php]

@@ -1,7 +1,7 @@
 FROM nginx:alpine
 
 ENV PHP_FPM="php:9000" \
-    NGINX_PORT="80"
+    NGINX_PORT="8080"
 
 RUN find /etc/nginx -type f -not -name 'mime.types' -not -name 'fastcgi_params' -delete && \
     rm -rf conf.d modules
