@@ -21,6 +21,7 @@ services:
       - type: bind # same as web container
         source: ./web
         target: /data
+    depends_on: [db]
     # user: 'youruser'
     # restart: always
 
