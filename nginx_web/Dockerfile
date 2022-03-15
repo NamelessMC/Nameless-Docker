@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged
 
 ENV PHP_FPM="php:9000" \
     NGINX_PORT="80"
