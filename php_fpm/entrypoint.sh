@@ -9,8 +9,14 @@ fi
 if [ -n "$(ls -A /data 2>/dev/null)" ]
 then
     echo "Data directory contains files, not downloading NamelessMC"
+
+    if [ -n "$NAMELESS_COMPOSER_INSTALL" ]
+    then
+        echo "NAMELESS_COMPOSER_INSTALL set, running composer install..."
+        composer install
+    fi
 else
-    echo "Data directory is empty, downloading NamelessMC.."
+    echo "Data directory is empty, downloading NamelessMC..."
     set -x
     mkdir -p /data
     cd /tmp
