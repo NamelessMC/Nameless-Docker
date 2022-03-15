@@ -13,6 +13,7 @@ then
     if [ -n "$NAMELESS_COMPOSER_INSTALL" ]
     then
         echo "NAMELESS_COMPOSER_INSTALL set, running composer install..."
+        cd /data
         composer install
     fi
 else
