@@ -16,7 +16,7 @@ You will need to install [Docker Compose](https://docs.docker.com/compose/) for 
 sudo apt install docker-compose
 ```
 
-Download [docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/raw/master/docker-compose.yml), optionally change some settings like setting `user` to your user (otherwise it will run as `www-data`). Uncomment `restart: always` to have the containers start on system boot.
+Download the [latest docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/v2-pr7-to-pr12/docker-compose.yml) or [experimental development docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/master/docker-compose.yml), optionally change some settings like setting `user` to your user (otherwise it will run as `www-data`). Uncomment `restart: always` to have the containers start on system boot.
 
 Create a directory on the host with correct permissions. By default the containers use `www-data` user id 33, so:
 ```
