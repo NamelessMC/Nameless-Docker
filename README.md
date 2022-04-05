@@ -10,10 +10,11 @@ You have to manually install Docker first if you don't have it installed on your
 
 ### Automated Deployment
 
-You will need to install [Docker Compose](https://docs.docker.com/compose/) for automated deploying.
+You will need to install [Docker Compose](https://docs.docker.com/compose/) for automated deployment.
 
+For Debian/Ubuntu:
 ```bash
-sudo apt install docker-compose
+sudo apt install docker-compose-plugin
 ```
 
 Download the [latest docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/v2-pr7-to-pr12/docker-compose.yml) or [experimental development docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/master/docker-compose.yml), optionally change some settings like setting `user` to your user (otherwise it will run as `www-data`). Uncomment `restart: always` to have the containers start on system boot.
@@ -24,11 +25,14 @@ mkdir web
 chown 33:33 web
 ```
 
-Then run `docker-compose up -d`.
+Then run `docker compose up -d`.
 
 When the containers are up, visit the website in a browser to start the installer. By default it listens on any interface, port 80.
 
 When the database configuration page shows up, fill in `db` for *database address*. For database username, password and database name, fill `nameless` for all of them, if you used default database credentials.
+
+## Troubleshooting
+Check container logs using `docker compose logs`.
 
 ## Development
 
