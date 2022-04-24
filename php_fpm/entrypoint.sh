@@ -55,7 +55,7 @@ then
         echo "Going to run installer, first waiting 10 seconds for the database to start"
         sleep 10
         echo "Running installer..."
-        php -f cli_install.php -- --iSwearIKnowWhatImDoing
+        php -f scripts/cli_install.php -- --iSwearIKnowWhatImDoing
     fi
 fi
 
