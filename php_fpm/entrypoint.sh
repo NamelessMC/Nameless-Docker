@@ -51,7 +51,7 @@ then
     cd /data
     if [ -f core/config.php ]; then
         echo "core/config.php exists, not running installer."
-    elif [ -f scripts/cli_install.php ]; then
+    elif [ ! -f scripts/cli_install.php ]; then
         echo "CLI install script doesn't exist, not running installer."
     else
         echo "Going to run installer, first waiting 10 seconds for the database to start"
