@@ -14,13 +14,13 @@ then
     then
         echo "WARNING: NAMELESS_COMPOSER_INSTALL is deprecated, use NAMELESS_ALWAYS_INSTALL_DEPENDENCIES instead."
         echo "NAMELESS_COMPOSER_INSTALL set, running composer install..."
-        composer install
+        composer install --no-progress --no-interaction
     fi
 
     if [ -n "$NAMELESS_ALWAYS_INSTALL_DEPENDENCIES" ]
     then
         echo "NAMELESS_ALWAYS_INSTALL_DEPENDENCIES set, running composer and yarn..."
-        composer install
+        composer install --no-progress --no-interaction
         yarnpkg
         # When running yarnpkg after downloading, the script deletes node_modules. However, doing that here
         # would require redownloading all modules at every container start.
@@ -35,7 +35,7 @@ else
     mv Nameless-*/* "/data"
     rm -rf /tmp/* # must not delete /tmp directory itself!
     cd /data
-    composer install
+    composer install --no-progress --no-interaction
     yarnpkg
     # remove some unnecessary files (dotfiles in the root directory are not copied in the first place)
     rm -rf \
