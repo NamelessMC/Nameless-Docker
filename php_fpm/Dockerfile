@@ -1,12 +1,14 @@
 FROM php:8.1-fpm-bullseye
 
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions gd pdo_mysql mysqli zip exif
+
+RUN install-php-extensions @composer
+
 RUN apt-get update && \
     apt-get install --no-install-recommends -y yarnpkg && \
     rm -rf /var/lib/apt/lists/*
-
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions @composer gd pdo_mysql mysqli zip exif
 
 # php-fpm loads configuration in alphabetical order so prefix with zz-
 RUN { \
