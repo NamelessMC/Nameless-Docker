@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   nginx:
-    image: namelessmc/nginx:v2-pr13
+    image: namelessmc/nginx:v2-pr12
     ports: ['8080:8080']
     volumes:
       - type: bind # same as php container
@@ -25,14 +25,14 @@ services:
     # restart: always
 
   php:
-    image: namelessmc/php:v2-pr13
+    image: namelessmc/php:v2-pr12
     volumes:
       - type: bind # same as web container
         source: ./web
         target: /data
       - target: /tmp
         tmpfs:
-          size: 25M
+          size: 100M
         type: tmpfs
     depends_on: [db]
     user: '1000' # change this

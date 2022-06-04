@@ -1,8 +1,13 @@
-FROM php:8.1-fpm-bullseye
+ARG PHP_VERSION=8.1
+FROM php:${PHP_VERSION}-fpm-bullseye
+
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y yarnpkg && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions gd pdo_mysql mysqli zip exif
+    install-php-extensions @composer gd pdo_mysql mysqli zip exif
 
 # php-fpm loads configuration in alphabetical order so prefix with zz-
 RUN { \
@@ -19,6 +24,9 @@ RUN { \
 RUN ln -s /tmp/additional-php-fpm-settings.conf /usr/local/etc/php-fpm.d/zz-nameless.conf
 
 ADD entrypoint.sh /
+
+ARG VERSION=v2
+ENV VERSION=${VERSION}
 
 # Used by website to know if it runs using our docker images for statistics
 ENV NAMELESSMC_METRICS_DOCKER=true
