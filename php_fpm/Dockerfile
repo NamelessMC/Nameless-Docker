@@ -1,5 +1,4 @@
-ARG PHP_VERSION=8.1
-FROM php:${PHP_VERSION}-fpm-bullseye
+FROM php:8.1-fpm-bullseye
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y yarnpkg && \
@@ -24,9 +23,6 @@ RUN { \
 RUN ln -s /tmp/additional-php-fpm-settings.conf /usr/local/etc/php-fpm.d/zz-nameless.conf
 
 ADD entrypoint.sh /
-
-ARG VERSION=v2
-ENV VERSION=${VERSION}
 
 # Used by website to know if it runs using our docker images for statistics
 ENV NAMELESSMC_METRICS_DOCKER=true
