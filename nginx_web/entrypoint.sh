@@ -14,4 +14,4 @@ cat > /tmp/listen.conf << EOL
 listen ${NGINX_PORT} default_server;
 EOL
 
-exec nginx -g "daemon off;"
+exec /docker-entrypoint.sh nginx -g "daemon off;"
