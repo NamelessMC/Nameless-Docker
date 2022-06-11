@@ -19,7 +19,7 @@ then
 
     if [ -n "$NAMELESS_ALWAYS_INSTALL_DEPENDENCIES" ]
     then
-        echo "NAMELESS_ALWAYS_INSTALL_DEPENDENCIES set; running composer, yarn and migrations before starting webserver"
+        echo "NAMELESS_ALWAYS_INSTALL_DEPENDENCIES set; running composer and yarn before starting webserver"
         echo "Running composer..."
         composer install --no-progress --no-interaction
 
@@ -27,9 +27,6 @@ then
         # When running yarnpkg after downloading, the script deletes node_modules. However, doing that here
         # would require redownloading all modules at every container start.
         yarnpkg
-
-        echo "Executing migrations..."
-        vendor/bin/phinx migrate -c core/migrations/phinx.php
     fi
 else
     echo "Data directory is empty, downloading NamelessMC..."
