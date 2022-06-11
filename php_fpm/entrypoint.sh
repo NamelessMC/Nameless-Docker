@@ -62,8 +62,8 @@ then
     elif [ ! -f scripts/cli_install.php ]; then
         echo "CLI install script doesn't exist, not running installer."
     else
-        echo "Going to run installer, first waiting 10 seconds for the database to start"
-        sleep 10
+        echo "Going to run installer, first waiting 5 seconds for the database to start"
+        sleep 5
         echo "Running installer..."
         php -f scripts/cli_install.php -- --iSwearIKnowWhatImDoing
     fi
