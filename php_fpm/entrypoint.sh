@@ -31,7 +31,7 @@ then
 else
     echo "Data directory is empty, downloading NamelessMC..."
     set -x
-    curl -L "https://github.com/NamelessMC/Nameless/archive/v2.tar.gz" | tar -x --directory=/data -f -
+    curl -L "https://github.com/NamelessMC/Nameless/archive/v2.tar.gz" | tar -xz --directory=/data -f -
     cd /data
     composer install --no-progress --no-interaction
     yarnpkg
