@@ -26,6 +26,7 @@ then
         echo "Running yarn..."
         # When running yarnpkg after downloading, the script deletes node_modules. However, doing that here
         # would require redownloading all modules at every container start.
+        # Someone setting NAMELESS_ALWAYS_INSTALL_DEPENDENCIES probably doesn't care about a bit of extra disk usage.
         yarnpkg
     fi
 else
@@ -35,8 +36,9 @@ else
     cd /data
     composer install --no-progress --no-interaction
     yarnpkg
-    # remove some unnecessary files (dotfiles in the root directory are not copied in the first place)
+    # Remove some unnecessary files
     rm -rf \
+        .htaccess \
         cache/.htaccess \
         changelog.txt \
         CONTRIBUTORS.md \
