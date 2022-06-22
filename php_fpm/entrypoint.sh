@@ -15,8 +15,10 @@ else
     mkdir -p /data
     curl -L "https://github.com/NamelessMC/Nameless/releases/download/v2.0.0-pr13/nameless-deps-dist.tar.xz" | tar --xz --extract --no-same-owner --no-same-permissions --touch --directory=/data --file -
     cd /data
-    # remove some unnecessary files (dotfiles in the root directory are not copied in the first place)
+    # Remove some unnecessary files
     rm -rf \
+        .htaccess \
+        LICENSE.txt \
         cache/.htaccess \
         uploads/placeholder.txt
     chmod -R ugo-x,u+rwX,go-rw . # Files 600 directories 700
