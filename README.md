@@ -17,7 +17,7 @@ For Debian/Ubuntu:
 sudo apt install docker-compose-plugin
 ```
 
-Download the [latest docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/dev/docker-compose.yaml) or [experimental development docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/dev/docker-compose.yaml), optionally change some settings like setting `user` to your user (otherwise it will run as `www-data`). Uncomment `restart: always` to have the containers start on system boot.
+Download the [latest docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/master/docker-compose.yaml) or [experimental development docker-compose.yml](https://github.com/NamelessMC/Nameless-Docker/blob/dev/docker-compose.yaml), optionally change some settings like setting `user` to your user (otherwise it will run as `www-data`). Uncomment `restart: always` to have the containers start on system boot.
 
 Create a directory on the host with correct permissions. By default the containers use `www-data` user id 33, so:
 ```
