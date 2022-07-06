@@ -60,7 +60,7 @@ v2-pr10 | v2.0.0-pr10 | 8.0 | Yes | Use PHP 7.4 for compatibility
 v2-pr10-php74 | v2.0.0-pr10 | 7.4 | Yes |
 v2-pr11 | v2.0.0-pr11 | 8.0 | Yes |
 v2-pr11-php74 | v2.0.0-pr11 | 7.4 | Yes | For compatibility with legacy modules
-v2-pr12 | v2.0.0-pr12** | 8.0** | Yes |
+v2-pr12 | v2.0.0-pr12 | 8.0 | Yes |
 v2-pr12-php74 | v2.0.0-pr12 | 7.4 | Yes | For compatibility with legacy modules
 dev-php8 | v2 development | 8.0 | No | Use `:dev` instead, it now uses PHP 8
 
