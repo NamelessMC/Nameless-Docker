@@ -13,7 +13,7 @@ else
     echo "Data directory is empty, downloading NamelessMC..."
     set -x
     mkdir -p /data
-    curl -L "https://github.com/NamelessMC/Nameless/releases/download/v2.0.0-pr13/nameless-deps-dist.tar.xz" | tar --xz --extract --no-same-owner --no-same-permissions --touch --directory=/data --file -
+    curl -L "https://github.com/NamelessMC/Nameless/releases/download/${NAMELESS_DOWNLOAD_VERSION}/nameless-deps-dist.tar.xz" | tar --xz --extract --no-same-owner --no-same-permissions --touch --directory=/data --file -
     cd /data
     # Remove some unnecessary files
     rm -rf \

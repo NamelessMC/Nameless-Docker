@@ -29,6 +29,9 @@ ENV NAMELESS_PATH_HIDE=true
 # Enable friendly URLs and hide the option by default, they work fine with the included configuration and there is no reason to turn it off.
 ENV NAMELESS_FRIENDLY_URLS=true NAMELESS_FRIENDLY_URLS_HIDE=true
 
+ARG NAMELESS_DOWNLOAD_VERSION=ERROR_NOT_SPECIFIED
+ENV NAMELESS_DOWNLOAD_VERSION=NAMELESS_DOWNLOAD_VERSION
+
 ENV PHP_PM="ondemand" \
     PHP_PM_MAX_CHILDREN="16" \
     PHP_PM_MAX_REQUESTS="200" \
