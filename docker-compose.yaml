@@ -32,8 +32,8 @@ services:
         source: ./db
         target: /var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: nameless
-      MYSQL_USER: nameless
-      MYSQL_PASSWORD: nameless
-      MYSQL_DATABASE: nameless
+      MARIADB_ROOT_PASSWORD: nameless
+      MARIADB_USER: nameless
+      MARIADB_PASSWORD: nameless
+      MARIADB_DATABASE: nameless
     # restart: always
