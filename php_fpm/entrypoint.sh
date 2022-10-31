@@ -61,13 +61,13 @@ if [ -n "$NAMELESS_AUTO_INSTALL" ]
 then
     if [ -f core/config.php ]; then
         echo "core/config.php exists, not running installer."
-    elif [ ! -f scripts/cli_install.php ]; then
+    elif [ ! -f dev/scripts/cli_install.php ]; then
         echo "CLI install script doesn't exist, not running installer."
     else
         echo "Going to run installer, first waiting 5 seconds for the database to start"
         sleep 5
         echo "Running installer..."
-        php -f scripts/cli_install.php -- --iSwearIKnowWhatImDoing
+        php -f dev/scripts/cli_install.php -- --iSwearIKnowWhatImDoing
     fi
 fi
 
