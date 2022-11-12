@@ -56,6 +56,9 @@ RUN mkdir /data && \
     chown 33:33 /data
 WORKDIR /data
 
+# Composer and yarn use home directory for caching (which is /var/www for the default www-data user)
+RUN chown 33:33 /var/www
+
 # The www-data user has uid 33 on Debian/Ubuntu which is what most people are used to
 USER 33
 
