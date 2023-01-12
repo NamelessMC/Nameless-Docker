@@ -6,6 +6,12 @@ if [ -z "$(find /data -user "$(id -u)" -print -prune -o -prune)" ]; then
     exit 1
 fi
 
+run_npm() {
+    TEMPDIR=$(mktemp -d)
+    npm install -q --cache "$TEMPDIR"
+    rm -rf "$TEMPDIR"
+}
+
 if [ -n "$(ls -A /data 2>/dev/null)" ]
 then
     echo "Data directory contains files, not downloading NamelessMC"
@@ -24,10 +30,10 @@ then
         composer install --no-progress --no-interaction
 
         echo "Running yarn..."
-        # When running yarnpkg after downloading, the script deletes node_modules. However, doing that here
+        # When running npm after downloading, the script deletes node_modules. However, doing that here
         # would require redownloading all modules at every container start.
         # Someone setting NAMELESS_ALWAYS_INSTALL_DEPENDENCIES probably doesn't care about a bit of extra disk usage.
-        yarnpkg
+        run_npm
     fi
 else
     echo "Data directory is empty, downloading NamelessMC..."
@@ -35,7 +41,7 @@ else
     curl -L "https://github.com/NamelessMC/Nameless/archive/develop.tar.gz" | tar -xz --directory=/data -f - --strip-components=1 Nameless-develop/
     cd /data
     composer install --no-progress --no-interaction
-    yarnpkg
+    run_npm
     # Remove some unnecessary files
     rm -rf \
         .htaccess \

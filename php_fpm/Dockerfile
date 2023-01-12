@@ -1,24 +1,18 @@
 FROM php:8.2-fpm-bullseye
 
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && \
+    install-php-extensions gd pdo_mysql mysqli zip exif intl @composer
+
 RUN apt-get update && \
     apt-get install -y gpg && \
     KEYRING=/usr/share/keyrings/nodesource.gpg && \
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee "$KEYRING" >/dev/null && \
     gpg --no-default-keyring --keyring "$KEYRING" --list-keys && \
-    echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/node_16.x bullseye main" | tee /etc/apt/sources.list.d/nodesource.list && \
+    echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/node_18.x bullseye main" | tee /etc/apt/sources.list.d/nodesource.list && \
     apt-get update && \
     apt-get install -y nodejs && \
-    corepack enable && \
-    corepack prepare yarn@stable --activate && \
-    # verify installation, this will return with >0 exit code if it does not exist
-    yarnpkg --version && \
-    apt-get remove -y gpg && \
-    apt-get autoremove -y && \
-    rm -rf /var/lib/apt/lists/*
-
-ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
-RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions gd pdo_mysql mysqli zip exif intl @composer
+    node --version
 
 # php-fpm loads configuration in alphabetical order so prefix with zz-
 RUN { \
