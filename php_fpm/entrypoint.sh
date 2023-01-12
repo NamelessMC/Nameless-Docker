@@ -6,9 +6,13 @@ if [ -z "$(find /data -user "$(id -u)" -print -prune -o -prune)" ]; then
     exit 1
 fi
 
-run_npm() {
+install_vendor() {
+    echo "Running composer..."
+    composer install --no-progress --no-interaction
+    echo "Running npm..."
     TEMPDIR=$(mktemp -d)
     npm install -q --cache "$TEMPDIR"
+    rm -f package-lock.json
     rm -rf "$TEMPDIR"
 }
 
@@ -25,23 +29,18 @@ then
 
     if [ -n "$NAMELESS_ALWAYS_INSTALL_DEPENDENCIES" ]
     then
-        echo "NAMELESS_ALWAYS_INSTALL_DEPENDENCIES set; running composer and yarn before starting webserver"
-        echo "Running composer..."
-        composer install --no-progress --no-interaction
-
-        echo "Running yarn..."
+        echo "NAMELESS_ALWAYS_INSTALL_DEPENDENCIES set; running composer and npm before starting webserver"
+        install_vendor
         # When running npm after downloading, the script deletes node_modules. However, doing that here
         # would require redownloading all modules at every container start.
         # Someone setting NAMELESS_ALWAYS_INSTALL_DEPENDENCIES probably doesn't care about a bit of extra disk usage.
-        run_npm
     fi
 else
     echo "Data directory is empty, downloading NamelessMC..."
     set -x
     curl -L "https://github.com/NamelessMC/Nameless/archive/develop.tar.gz" | tar -xz --directory=/data -f - --strip-components=1 Nameless-develop/
     cd /data
-    composer install --no-progress --no-interaction
-    run_npm
+    install_vendor
     # Remove some unnecessary files
     rm -rf \
         .htaccess \
