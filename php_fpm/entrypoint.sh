@@ -11,8 +11,7 @@ install_vendor() {
     composer install --no-progress --no-interaction
     echo "Running npm..."
     TEMPDIR=$(mktemp -d)
-    npm install -q --cache "$TEMPDIR"
-    rm -f package-lock.json
+    npm ci -q --cache "$TEMPDIR"
     rm -rf "$TEMPDIR"
 }
 
