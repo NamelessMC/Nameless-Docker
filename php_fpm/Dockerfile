@@ -5,6 +5,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd pdo_mysql mysqli zip exif intl @composer
 
 RUN apt-get update && \
+    apt-get install -y zip && \
     apt-get install -y gpg && \
     KEYRING=/usr/share/keyrings/nodesource.gpg && \
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee "$KEYRING" >/dev/null && \
@@ -12,7 +13,8 @@ RUN apt-get update && \
     echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/node_18.x bullseye main" | tee /etc/apt/sources.list.d/nodesource.list && \
     apt-get update && \
     apt-get install -y nodejs && \
-    node --version
+    node --version && \
+    rm -rf /var/lib/apt/lists/*
 
 # php-fpm loads configuration in alphabetical order so prefix with zz-
 RUN { \
