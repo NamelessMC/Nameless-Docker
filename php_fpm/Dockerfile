@@ -5,7 +5,7 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd pdo_mysql mysqli zip exif intl @composer
 
 RUN apt-get update && \
-    apt-get install -y zip && \
+    apt-get install -y zip git && \
     apt-get install -y gpg && \
     KEYRING=/usr/share/keyrings/nodesource.gpg && \
     curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | tee "$KEYRING" >/dev/null && \
