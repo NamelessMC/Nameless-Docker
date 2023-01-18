@@ -54,16 +54,16 @@ dev | v2 development | 8.2 | Yes | For development only, reinstall frequently. D
 
 | Tag | NamelessMC version | PHP version | Receives updates\* | Notes
 | --- | ------------------ | ----------- | ---------------- | -----
-v2-pr7 | v2.0.0-pr7 | 7.4 | Yes |
-v2-pr8 | v2.0.0-pr8 | 7.4 | Yes |
-v2-pr9 | v2.0.0-pr9 | 7.4 | Yes |
-v2-pr9-php8 | v2.0.0-pr9 | 8.0 | Yes | Experimental
-v2-pr10 | v2.0.0-pr10 | 8.0 | Yes | Use PHP 7.4 for compatibility
-v2-pr10-php74 | v2.0.0-pr10 | 7.4 | Yes |
-v2-pr11 | v2.0.0-pr11 | 8.0 | Yes |
-v2-pr11-php74 | v2.0.0-pr11 | 7.4 | Yes | For compatibility with legacy modules
-v2-pr12 | v2.0.0-pr12 | 8.0 | Yes |
-v2-pr12-php74 | v2.0.0-pr12 | 7.4 | Yes | For compatibility with legacy modules
+v2-pr7 | v2.0.0-pr7 | 7.4 | No |
+v2-pr8 | v2.0.0-pr8 | 7.4 | No |
+v2-pr9 | v2.0.0-pr9 | 7.4 | No |
+v2-pr9-php8 | v2.0.0-pr9 | 8.0 | No | Experimental
+v2-pr10 | v2.0.0-pr10 | 8.0 | No | Use PHP 7.4 for compatibility
+v2-pr10-php74 | v2.0.0-pr10 | 7.4 | No |
+v2-pr11 | v2.0.0-pr11 | 8.0 | No |
+v2-pr11-php74 | v2.0.0-pr11 | 7.4 | No | For compatibility with legacy modules
+v2-pr12 | v2.0.0-pr12 | 8.0 | No |
+v2-pr12-php74 | v2.0.0-pr12 | 7.4 | No | For compatibility with legacy modules
 v2-pr13 | v2.0.0-pr13 | 8.2 (8.1 before 2022-12-12) | Yes |
 v2.0.0 | v2.0.0 | 8.2 (8.1 before 2022-12-12) | Yes |
 v2.0.1 | v2.0.1 | 8.2 (8.1 before 2022-12-12)  | Yes |
