@@ -32,6 +32,8 @@ RUN ln -s /tmp/additional-php-fpm-settings.conf /usr/local/etc/php-fpm.d/zz-name
 
 ADD entrypoint.sh /
 
+ENV NAMELESS_DOWNLOAD_VERSION=develop
+
 # Used by website to know if it runs using our docker images for statistics
 ENV NAMELESSMC_METRICS_DOCKER=true
 
