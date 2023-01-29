@@ -36,19 +36,19 @@ Check container logs using `docker compose logs`.
 
 ## Development
 
-If you want to use Docker for developing NamelessMC, please see the [docker compose file in the main repo](https://github.com/NamelessMC/Nameless/blob/v2/docker-compose.yaml).
+If you want to use Docker for developing NamelessMC, please see the [docker compose file in the main repository](https://github.com/NamelessMC/Nameless/blob/v2/docker-compose.yaml).
 
 ## Updating
-First, follow regular update instructions on the website (uploading files etc). After the upgrade is complete and your website is back up, change the image tag to the new version (e.g. change from `v2-pr7` to `v2-pr8`) to get the newest PHP library versions.
+First, follow regular update instructions on the website (uploading files etc). After the upgrade is complete and your website is back up, change the image tag to the new version (e.g. change from `v2.0` to `v2.1`) to get the newest PHP library versions.
 
 ## Available tags
 
 ### Supported tags
 | Tag | NamelessMC version | PHP version | Receives updates\* | Notes
 | --- | ------------------ | ----------- | ---------------- | -----
-v2.0.2 | v2.0.2 | 8.2 (8.1 before 2022-12-12) | Yes |
-v2.0 | Latest v2.0.x release (currently 2.0.2) | 8.2 (8.1 before 2022-12-12)  | Yes
-dev | v2 development | 8.2 | Yes | For development only, reinstall frequently. Downloads latest source code and includes composer and yarn.
+v2.0 | Latest v2.0.x release (currently 2.0.3) | 8.2 (8.1 before 2022-12-12) | Yes | Recommended tag
+v2.0.3 | v2.0.3 | 8.2 | Yes |
+dev | v2 development | 8.2 | Yes | For development only. Downloads latest source code and includes composer and npm.
 
 ### Legacy tags
 
@@ -67,6 +67,7 @@ v2-pr12-php74 | v2.0.0-pr12 | 7.4 | No | For compatibility with legacy modules
 v2-pr13 | v2.0.0-pr13 | 8.2 (8.1 before 2022-12-12) | Yes |
 v2.0.0 | v2.0.0 | 8.2 (8.1 before 2022-12-12) | Yes |
 v2.0.1 | v2.0.1 | 8.2 (8.1 before 2022-12-12)  | Yes |
+v2.0.2 | v2.0.2 | 8.2 (8.1 before 2022-12-12) | Yes |
 dev-php8 | v2 development | 8.0 | No | Use `:dev` instead, it now uses PHP 8
 
 \* Image updates, not NamelessMC updates. Only the latest NamelessMC version is supported.
