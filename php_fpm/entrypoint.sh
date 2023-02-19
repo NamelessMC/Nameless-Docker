@@ -37,7 +37,7 @@ then
 else
     echo "Data directory is empty, downloading NamelessMC..."
     set -x
-    curl -L "https://github.com/NamelessMC/Nameless/archive/$NAMELESS_DOWNLOAD_VERSION.tar.gz" | tar -xz --directory=/data -f - --strip-components=1 Nameless-develop/
+    curl -L "https://github.com/NamelessMC/Nameless/archive/$NAMELESS_DOWNLOAD_VERSION.tar.gz" | tar -xz --directory=/data -f - --strip-components=1 "Nameless-$NAMELESS_DOWNLOAD_VERSION/"
     cd /data
     install_vendor
     # Remove some unnecessary files
