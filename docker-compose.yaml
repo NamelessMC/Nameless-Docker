@@ -3,7 +3,7 @@ version: '3.2'
 services:
 
   nginx:
-    image: namelessmc/nginx:dev
+    image: namelessmc/nginx:v2.1
     ports: ['8080:8080']
     volumes:
       - type: bind # same as php container
@@ -16,7 +16,7 @@ services:
     # restart: always
 
   php:
-    image: namelessmc/php:dev
+    image: namelessmc/php:v2.1
     volumes:
       - type: bind # same as web container
         source: ./web
