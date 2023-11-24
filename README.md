@@ -22,7 +22,7 @@ Download the [latest docker-compose.yml](https://github.com/NamelessMC/Nameless-
 Create a directory on the host with correct permissions. By default the containers use `www-data` user id 33, so:
 ```
 mkdir web
-chown 33:33 web
+chown -R 33:33 web
 ```
 
 Then run `docker compose up -d`.
