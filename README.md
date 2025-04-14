@@ -46,9 +46,9 @@ First, follow regular update instructions on the website (uploading files etc). 
 ### Supported tags
 | Tag | NamelessMC version | PHP version | Receives updates\* | Notes
 | --- | ------------------ | ----------- | ---------------- | -----
-v2.1 | Latest v2.1.x release (currently 2.1.3) | 8.2 | Yes | Recommended tag
-v2.1.3 | v2.1.3 | 8.2 | Yes
-dev | v2 development | 8.2 | Yes | For development only. Downloads latest source code and includes composer and npm.
+v2.1 | Latest v2.1.x release (currently 2.1.4) | 8.2 | Yes | Recommended tag
+v2.1.4 | v2.1.4 | 8.2 | Yes
+dev | v2 development | 8.4 | Yes | For development only. Downloads latest source code and includes composer and npm.
 
 ### Legacy tags
 
@@ -73,6 +73,7 @@ v2.0.3 | v2.0.3 | 8.2 | Yes |
 v2.1.0 | v2.1.0 | 8.2 | Yes |
 v2.1.1 | v2.1.1 | 8.2 | Yes |
 v2.1.2 | v2.1.2 | 8.2 | Yes |
+v2.1.3 | v2.1.3 | 8.2 | Yes
 dev-php8 | v2 development | 8.0 | No | Use `:dev` instead, it now uses PHP 8
 
 \* Image updates, not NamelessMC updates. Only the latest NamelessMC version is supported.
