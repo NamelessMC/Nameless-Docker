@@ -1,4 +1,4 @@
-ARG PHP_IMAGE php:8.2-fpm
+ARG PHP_IMAGE=php:8.2-fpm
 FROM $PHP_IMAGE
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
