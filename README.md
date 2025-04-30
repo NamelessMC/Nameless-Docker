@@ -43,37 +43,50 @@ First, follow regular update instructions on the website (uploading files etc). 
 
 ## Available tags
 
-### Supported tags
+### Recommended tags
+
 | Tag | NamelessMC version | PHP version | Receives updates\* | Notes
 | --- | ------------------ | ----------- | ---------------- | -----
-v2.1 | Latest v2.1.x release (currently 2.1.4) | 8.2 | Yes | Recommended tag
-v2.1.4 | v2.1.4 | 8.2 | Yes
+v2.2 | Latest v2.2.x release (currently 2.2.1) | 8.4 | Yes |
+v2.1 | Latest v2.1.x release (currently 2.1.4) | 8.2 | Yes |
 dev | v2 development | 8.4 | Yes | For development only. Downloads latest source code and includes composer and npm.
+
+### All tags
+
+These tags all receive image updates, but only the tags listed above receive NamelessMC updates.
+
+| Tag | NamelessMC version | PHP version
+| --- | ------------------ | -----------
+v2-pr13 | v2.0.0-pr13 | 8.2 (8.1 before 2022-12-12)
+v2.0 | Latest v2.0.x release (currently 2.0.3) | 8.2 (8.1 before 2022-12-12)
+v2.1 | Latest v2.1.x release (currently 2.1.4) | 8.2 (8.1 before 2022-12-12)
+v2.2 | Latest v2.2.x release (currently 2.2.1) | 8.4
+v2.0.0 | v2.0.0 | 8.2 (8.1 before 2022-12-12)
+v2.0.1 | v2.0.1 | 8.2 (8.1 before 2022-12-12)
+v2.0.2 | v2.0.2 | 8.2 (8.1 before 2022-12-12)
+v2.0.3 | v2.0.3 | 8.2
+v2.1.0 | v2.1.0 | 8.2
+v2.1.1 | v2.1.1 | 8.2
+v2.1.2 | v2.1.2 | 8.2
+v2.1.3 | v2.1.3 | 8.2
+v2.1.4 | v2.1.4 | 8.2
+v2.2.0 | v2.2.0 | 8.4
+v2.2.1 | v2.2.0 | 8.4
 
 ### Legacy tags
 
-| Tag | NamelessMC version | PHP version | Receives updates\* | Notes
-| --- | ------------------ | ----------- | ---------------- | -----
-v2-pr7 | v2.0.0-pr7 | 7.4 | No |
-v2-pr8 | v2.0.0-pr8 | 7.4 | No |
-v2-pr9 | v2.0.0-pr9 | 7.4 | No |
-v2-pr9-php8 | v2.0.0-pr9 | 8.0 | No | Experimental
-v2-pr10 | v2.0.0-pr10 | 8.0 | No | Use PHP 7.4 for compatibility
-v2-pr10-php74 | v2.0.0-pr10 | 7.4 | No |
-v2-pr11 | v2.0.0-pr11 | 8.0 | No |
-v2-pr11-php74 | v2.0.0-pr11 | 7.4 | No | For compatibility with legacy modules
-v2-pr12 | v2.0.0-pr12 | 8.0 | No |
-v2-pr12-php74 | v2.0.0-pr12 | 7.4 | No | For compatibility with legacy modules
-v2-pr13 | v2.0.0-pr13 | 8.2 (8.1 before 2022-12-12) | Yes |
-v2.0.0 | v2.0.0 | 8.2 (8.1 before 2022-12-12) | Yes |
-v2.0.1 | v2.0.1 | 8.2 (8.1 before 2022-12-12)  | Yes |
-v2.0.2 | v2.0.2 | 8.2 (8.1 before 2022-12-12) | Yes |
-v2.0 | Latest v2.0.x release (currently 2.0.3) | 8.2 (8.1 before 2022-12-12) | Yes |
-v2.0.3 | v2.0.3 | 8.2 | Yes |
-v2.1.0 | v2.1.0 | 8.2 | Yes |
-v2.1.1 | v2.1.1 | 8.2 | Yes |
-v2.1.2 | v2.1.2 | 8.2 | Yes |
-v2.1.3 | v2.1.3 | 8.2 | Yes
-dev-php8 | v2 development | 8.0 | No | Use `:dev` instead, it now uses PHP 8
+These tags no longer receive image updates and should not be used.
 
-\* Image updates, not NamelessMC updates. Only the latest NamelessMC version is supported.
+| Tag | NamelessMC version | PHP version | Notes
+| --- | ------------------ | ----------- | -----
+v2-pr7 | v2.0.0-pr7 | 7.4
+v2-pr8 | v2.0.0-pr8 | 7.4
+v2-pr9 | v2.0.0-pr9 | 7.4
+v2-pr9-php8 | v2.0.0-pr9 | 8.0 | Experimental
+v2-pr10 | v2.0.0-pr10 | 8.0 | Use PHP 7.4 for compatibility
+v2-pr10-php74 | v2.0.0-pr10 | 7.4
+v2-pr11 | v2.0.0-pr11 | 8.0
+v2-pr11-php74 | v2.0.0-pr11 | 7.4 | For compatibility with legacy modules
+v2-pr12 | v2.0.0-pr12 | 8.0
+v2-pr12-php74 | v2.0.0-pr12 | 7.4 | For compatibility with legacy modules
+dev-php8 | v2 development | 8.0 | Use `:dev` instead, it now uses PHP 8
