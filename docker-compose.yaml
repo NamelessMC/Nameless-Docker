@@ -26,7 +26,7 @@ services:
     # restart: always
 
   db:
-    image: mariadb
+    image: mariadb:10.11
     volumes:
       - type: bind
         source: ./db
@@ -36,4 +36,5 @@ services:
       MARIADB_USER: nameless
       MARIADB_PASSWORD: nameless
       MARIADB_DATABASE: nameless
+      MARIADB_AUTO_UPGRADE: 1
     # restart: always
