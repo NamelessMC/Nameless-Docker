@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged
+FROM docker.io/nginxinc/nginx-unprivileged
 
 ENV PHP_FPM="php:9000" \
     NGINX_PORT="8080"
