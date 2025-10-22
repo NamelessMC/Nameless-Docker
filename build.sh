@@ -1,8 +1,11 @@
 set -e
 
 deploy() {
-    podman manifest create -a nameless-nginx
-    podman manifest create -a nameless-php
+    ! podman manifest exists nameless-nginx || podman manifest rm nameless-nginx
+    ! podman manifest exists nameless-php || podman manifest rm nameless-php
+
+    podman manifest create nameless-nginx
+    podman manifest create nameless-php
 
     podman build --platform=linux/arm64,linux/amd64 --manifest nameless-nginx nginx_web
     podman build --platform=linux/arm64,linux/amd64 --manifest nameless-php --build-arg "NAMELESS_DOWNLOAD_VERSION=$2" --build-arg "PHP_IMAGE=docker.io/$3" php_fpm
