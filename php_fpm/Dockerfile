@@ -1,9 +1,13 @@
 ARG PHP_IMAGE=docker.io/php:8.3-fpm
-FROM $PHP_IMAGE
+FROM $PHP_IMAGE AS base
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions gd pdo_mysql mysqli zip exif intl
+    install-php-extensions gd pdo_mysql mysqli zip exif intl @composer
+
+RUN apt-get update && \
+    apt-get install -y npm && \
+    rm -rf /var/lib/apt/lists/*
 
 # php-fpm loads configuration in alphabetical order so prefix with zz-
 RUN { \

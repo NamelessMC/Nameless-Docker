@@ -35,3 +35,5 @@ deploy  v2.2.1      v2.2.1	    php:8.3-fpm
 deploy  v2.2.2      v2.2.2	    php:8.3-fpm
 deploy  v2.2.3      v2.2.3	    php:8.3-fpm
 deploy  v2.2        v2.2.4	    php:8.3-fpm
+
+deploy  dev         develop	    php:8.5-fpm
