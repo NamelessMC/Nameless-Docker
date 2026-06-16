@@ -28,12 +28,14 @@ deploy  v2.1.1      v2.1.1	    php:8.2-fpm
 deploy  v2.1.2      v2.1.2	    php:8.2-fpm
 deploy  v2.1.3      v2.1.3	    php:8.2-fpm
 deploy  v2.1.4      v2.1.4	    php:8.2-fpm
-deploy  v2.1        v2.1.3	    php:8.2-fpm
+deploy  v2.1        v2.1.4	    php:8.2-fpm
 
 deploy  v2.2.0      v2.2.0	    php:8.3-fpm
 deploy  v2.2.1      v2.2.1	    php:8.3-fpm
 deploy  v2.2.2      v2.2.2	    php:8.3-fpm
 deploy  v2.2.3      v2.2.3	    php:8.3-fpm
-deploy  v2.2        v2.2.4	    php:8.3-fpm
+deploy  v2.2.4      v2.2.4	    php:8.3-fpm
+deploy  v2.2.5      v2.2.5	    php:8.3-fpm
+deploy  v2.2        v2.2.5	    php:8.3-fpm
 
 deploy  dev         develop	    php:8.5-fpm
