@@ -47,7 +47,7 @@ First, follow regular update instructions on the website (uploading files etc). 
 
 | Tag | NamelessMC version | PHP version | Notes
 | --- | ------------------ | ----------- | ------
-v2.2 | Latest v2.2.x release (currently 2.2.4) | 8.3 |
+v2.2 | Latest v2.2.x release (currently 2.2.5) | 8.3 |
 v2.1 | Latest v2.1.x release (currently 2.1.4) | 8.2 |
 dev | v2 development | latest | For development only. Downloads latest source code and includes composer and npm.
 
@@ -75,6 +75,7 @@ v2.2.1 | v2.2.1 | 8.3
 v2.2.2 | v2.2.2 | 8.3
 v2.2.3 | v2.2.3 | 8.3
 v2.2.4 | v2.2.4 | 8.3
+v2.2.5 | v2.2.5 | 8.3
 
 ### Legacy tags
 
